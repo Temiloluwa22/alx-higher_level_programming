@@ -8,15 +8,14 @@ if __name__ == "__main__":
   db = MySQLdb.connect(user=sys.argv[1],
                      passwd=sys.argv[2],
                        db=sys.argv[3],
-                       port=3306
+                       port=3306,
                       host='localhost')
   c = db.cursor()
   c.execute("SELECT id, FROM 'states'")
-  all states = c.fetchall
+  allstates = c.fetchall()
 
   for state in allstates:
       print(state)
       
-      c.close()
+      cursor.close()
       db.close()
-
